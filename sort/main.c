@@ -16,19 +16,40 @@ void Bubble(int num[],int n)
         {
             if(num[j]>num[j+1])
             {
-                int m = num[j];
+                int m=0;
+                m = num[j];
                 num[j] = num[j+1];
                 num[j+1] = m;
             }
         }
         printf("%d ",num[i]);
     }
-    return;
+    return;//
 }
 int main()
 {
-    int num[10]={11,2,60,45,3,6,65,12,98,23};
-    Bubble(num,10);
+    int n;
+    FILE *p;
+    scanf("%d",&n);
+    p=fopen("/Users/a20161104600/Desktop/sort/input.txt","r");
+    if(p==NULL)
+    {
+        printf("Error opening!");
+        return 0;
+    }
+    else
+    {
+        int a[];
+        int i=0;
+        a[i]=fgetc(p);
+        while(a[i]!=EOF)
+        {
+            a[i+1]=fgetc(p);
+        }
+        fclose(p);
+    }
+    
+    //Bubble(num,10);/Users/a20161104600/Desktop/sort/output.txt//
     return 0;
 }
    
